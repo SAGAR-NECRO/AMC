@@ -1,0 +1,11 @@
+public static int AMCCompareDate(String AMC_DATE)
+{
+	 String strAMCdate = "";
+	 StringEncrypter crypto = new StringEncrypter();	
+	 String AMC_date = ConfigurationManager.get("AMCDATE");
+	 strAMCdate = crypto.decrypt(AMC_date);
+	 LocalDate date1 = LocalDate.parse(strAMCdate);
+	 LocalDate today = LocalDate.now();
+	 int result = today.compareTo(date1);
+	 return result;
+}
